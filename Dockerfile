@@ -5,6 +5,6 @@ MAINTAINER Hǎiliàng Wáng <w@h12.me>
 RUN echo "resolvconf resolvconf/linkify-resolvconf boolean false" | debconf-set-selections
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y pdnsd
-#COPY pdnsd.conf /etc/pdnsd.conf
+COPY pdnsd.conf /etc/pdnsd.conf
 
 ENTRYPOINT ["/usr/sbin/pdnsd"]
